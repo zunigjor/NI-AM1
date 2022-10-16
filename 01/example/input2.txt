@@ -1,0 +1,11 @@
+Dear Sir or Madam,
+
+please find the details about my booking below:
+
+===
+Location: "Bohemian Switzerland"
+Person: "Jan Novak"
+===
+
+Regards,
+Jan Novak
