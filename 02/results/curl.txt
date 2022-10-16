@@ -1,0 +1,60 @@
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol
+<html>
+<head>
+<title>Protocol</title>
+</head>
+<body>
+<h1>Protocol</h1>
+<p>Your next page is <a href="./protocol/welcome">/protocol/welcome</a></p>
+<pre>curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/welcome</pre>
+<p><a href="http://curl.haxx.se/docs/httpscripting.html">Help</a></p>
+</body>
+</html>
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/welcome
+OK
+Your next page is /protocol/get
+send GET parameter "name" with value "fuss" 
+set Header "Accept" to "text/plain" 
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/get?name=fuss -X GET -H "Accept: text/plain"
+OK
+Your next page is /protocol/post 
+send POST parameter "name" with value "encompasses"
+and set Header "Accept" is "text/plain" 
+and set Header "Accept-Language" is "en-US" 
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/post?name=encompasses -X POST -H "Accept: text/plain" -H "Accept-Language: en-US"
+OK
+Your next page is /protocol/referer 
+change referer to value "misc"
+set Header "Accept" is "text/html" 
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/referer -H "Referer: misc" -H "Accept: text/html"
+OK
+Your next page is /protocol/useragent
+and change User-Agent to value "behind"
+and set Header "Accept-Language" is "en-US" 
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/useragent -H "User-Agent: behind" -H "Accept-Language: en-US"
+OK
+Your next page is /protocol/cookie 
+send cookie called "name" with value "lock"
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/cookie -b "name=lock"
+OK
+Your next page is /protocol/auth 
+authenticate by "changing:policy"
+set Header "Accept" is "text/html" 
+
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/auth -u changing:policy -H "Accept: text/html"
+OK
+Your final result is: dominant
+

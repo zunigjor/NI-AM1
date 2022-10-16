@@ -1,0 +1,16 @@
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/welcome
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/get?name=fuss -X GET -H "Accept: text/plain"
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/post?name=encompasses -X POST -H "Accept: text/plain" -H "Accept-Language: en-US"
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/referer -H "Referer: misc" -H "Accept: text/html"
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/useragent -H "User-Agent: behind" -H "Accept-Language: en-US"
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/cookie -b "name=lock"
+
+curl http://147.32.233.18:8888/NI-AM1-ApplicationProtocols/protocol/auth -u changing:policy -H "Accept: text/html"
+
