@@ -1,0 +1,31 @@
+###
+
+GET http://127.0.0.1:8080/tour
+Content-Type: application/json
+
+###
+
+POST http://127.0.0.1:8080/tour
+Content-Type: application/json
+
+{
+  "id": "123",
+  "name": "New city tour"
+}
+
+###
+
+GET http://127.0.0.1:8080/tour/123
+Content-Type: application/json
+
+###
+
+DELETE http://127.0.0.1:8080/tour/123
+Content-Type: application/json
+
+###
+
+GET http://127.0.0.1:8080/tour/awaiting-delete
+Content-Type: application/json
+
+###
