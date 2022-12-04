@@ -1,0 +1,113 @@
+###
+
+GET http://127.0.0.1:8080/tour/last-modified
+Content-Type: application/json
+
+###
+# HTTP/1.1 200
+# Last-Modified: Sun, 04 Dec 2022 19:44:36 GMT
+# Content-Type: application/json
+# Content-Length: 124
+# Date: Sun, 04 Dec 2022 19:44:41 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# [
+#   {
+#     "id": "1",
+#     "name": "City tour",
+#     "customers": [
+#       "Jorge",
+#       "Franta"
+#     ]
+#   },
+#   {
+#     "id": "2",
+#     "name": "Village tour",
+#     "customers": [
+#       "Pepa",
+#       "Ondra"
+#     ]
+#   }
+# ]
+#
+# Response code: 200; Time: 90ms (90 ms); Content length: 124 bytes (124 B)
+###
+
+GET http://127.0.0.1:8080/tour/last-modified
+Content-Type: application/json
+If-Modified-Since: Sun, 04 Dec 2022 19:44:36 GMT
+
+###
+# HTTP/1.1 304
+# Last-Modified: Sun, 04 Dec 2022 19:44:36 GMT
+# Date: Sun, 04 Dec 2022 19:44:50 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# <Response body is empty>
+#
+# Response code: 304; Time: 4ms (4 ms); Content length: 0 bytes (0 B)
+###
+
+POST http://127.0.0.1:8080/tour/1/customer
+Content-Type: text/plain
+
+Pepa
+
+###
+# HTTP/1.1 200
+# Content-Type: application/json
+# Content-Length: 67
+# Date: Sun, 04 Dec 2022 19:45:17 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# {
+#   "id": "1",
+#   "name": "City tour",
+#   "customers": [
+#     "Jorge",
+#     "Franta",
+#     "Pepa"
+#   ]
+# }
+#
+# Response code: 200; Time: 11ms (11 ms); Content length: 67 bytes (67 B)
+###
+
+GET http://127.0.0.1:8080/tour/last-modified
+Content-Type: application/json
+If-Modified-Since: Sun, 04 Dec 2022 19:44:36 GMT
+
+###
+# HTTP/1.1 200
+# Last-Modified: Sun, 04 Dec 2022 19:45:17 GMT
+# Content-Type: application/json
+# Content-Length: 131
+# Date: Sun, 04 Dec 2022 19:45:27 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# [
+#   {
+#     "id": "1",
+#     "name": "City tour",
+#     "customers": [
+#       "Jorge",
+#       "Franta",
+#       "Pepa"
+#     ]
+#   },
+#   {
+#     "id": "2",
+#     "name": "Village tour",
+#     "customers": [
+#       "Pepa",
+#       "Ondra"
+#     ]
+#   }
+# ]
+#
+# Response code: 200; Time: 4ms (4 ms); Content length: 131 bytes (131 B)
+###

@@ -1,0 +1,95 @@
+###
+
+GET http://127.0.0.1:8080/tour/weak-etag
+Content-Type: application/json
+
+###
+# HTTP/1.1 200
+# ETag: W/"-1510752993"
+# Content-Type: application/json
+# Transfer-Encoding: chunked
+# Date: Sun, 04 Dec 2022 19:18:22 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# [
+#   {
+#     "id": "1",
+#     "name": "City tour",
+#     "customers": [
+#       "Jorge",
+#       "Franta",
+#       "Pepa"
+#     ]
+#   },
+#   {
+#     "id": "2",
+#     "name": "Village tour",
+#     "customers": [
+#       "Pepa",
+#       "Ondra"
+#     ]
+#   }
+# ]
+#
+# Response code: 200; Time: 6ms (6 ms); Content length: 131 bytes (131 B)
+###
+
+GET http://127.0.0.1:8080/tour/weak-etag
+Content-Type: application/json
+If-None-Match: W/"-1510752993"
+
+###
+# HTTP/1.1 304
+# ETag: W/"-1510752993"
+# Date: Sun, 04 Dec 2022 19:19:17 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# <Response body is empty>
+#
+# Response code: 304; Time: 3ms (3 ms); Content length: 0 bytes (0 B)
+###
+
+POST http://127.0.0.1:8080/tour/1/customer
+Content-Type: text/plain
+
+Pepa
+
+###
+# HTTP/1.1 200
+# Content-Type: application/json
+# Content-Length: 74
+# Date: Sun, 04 Dec 2022 19:19:47 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# {
+#   "id": "1",
+#   "name": "City tour",
+#   "customers": [
+#     "Jorge",
+#     "Franta",
+#     "Pepa",
+#     "Pepa"
+#   ]
+# }
+#
+# Response code: 200; Time: 4ms (4 ms); Content length: 74 bytes (74 B)
+###
+
+GET http://127.0.0.1:8080/tour/weak-etag
+Content-Type: application/json
+If-None-Match: W/"-1510752993"
+
+###
+# HTTP/1.1 304
+# ETag: W/"-1510752993"
+# Date: Sun, 04 Dec 2022 19:20:19 GMT
+# Keep-Alive: timeout=60
+# Connection: keep-alive
+#
+# <Response body is empty>
+#
+# Response code: 304; Time: 3ms (3 ms); Content length: 0 bytes (0 B)
+###
