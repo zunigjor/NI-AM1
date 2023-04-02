@@ -1,4 +1,4 @@
-= HW9
+# HW9
 
 V tomto úkolu jsem vytvořil jendoduchý load balancer, který uchovává informace o healthy a unhealthy zdrojích. Tyto informace aktualizuje každých 1000ms.
 
@@ -6,7 +6,7 @@ Na healthy zdroje předává dotazy z URL `/test`. Výběr ze seznamu healthy zd
 
 V případě, že nějaký zdroj se stane nedostupným, právě ve chvíli kdy dorazí dotaz, tak load balancer odstraní nedostupný zdroj ze seznamu healthy zdrojů a pokusí se přeposlat dotaz na zdroj jiný.
 
-=== Výpis logů
+### Výpis logů
 
 Do výpisu logů vybírám zajímavé časti, tedy chvíle kdy se zdroje měnily z healthy na unhealthy nebo naopak.
 

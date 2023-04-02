@@ -1,0 +1,1 @@
+# HW2 - HTTP Application Protocol - telnet, openssl, cURL
