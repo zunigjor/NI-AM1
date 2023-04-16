@@ -1,4 +1,4 @@
-# Homework 
+# NI-AM1
 | # | Úloha                                                   | Body    |
 |---|---------------------------------------------------------|---------|
 | 1 | [Integration Issues - Transformation of formats](./01)  | 3 / 3   |
